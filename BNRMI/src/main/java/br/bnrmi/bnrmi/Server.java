@@ -20,7 +20,7 @@ public class Server {
         try {
             java.rmi.registry.LocateRegistry.createRegistry(6666);
             MS k = new MSimp();
-            Naming.rebind("//127.0.0.1:6666/BatalhaNaval");
+            Naming.rebind("//127.0.0.1:6666/BatalhaNaval",k);
         } catch (Exception e) {
             System.out.printf("Trouble: " + e);
         }
