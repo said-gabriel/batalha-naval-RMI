@@ -9,6 +9,10 @@ package br.bnrmi.Interface;
  *
  * @author Lucas
  */
-public class MS {
+public interface MS extends java.rmi.Remote {
+    public boolean acertou(int[] tiro, int [][] navios) throws java.rmi.RemoteException;
     
+    public int Jogou(String nome) throws java.rmi.RemoteException;
+    
+    public boolean Vez(int codigo) throws java.rmi.RemoteException;
 }
