@@ -7,7 +7,7 @@ package br.bnrmi.bnrmi;
 
 import br.bnrmi.Interface.MS;
 import br.bnrmi.Interface.MSimp;
-import static bnlng.Jogador.iniciaNavios;
+import static br.bnrmi.bnrmi.Jogador.iniciaNavios;
 import java.rmi.Naming;
 
 /**

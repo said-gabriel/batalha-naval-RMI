@@ -5,6 +5,8 @@
  */
 package br.bnrmi.bnrmi;
 import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author 55289
@@ -15,7 +17,11 @@ public class Jogador2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Jogador j2 = new Jogador(2);
+        try {
+            Jogador j2 = new Jogador(2);
+        } catch (RemoteException ex) {
+            Logger.getLogger(Jogador2.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
