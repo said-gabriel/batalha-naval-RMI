@@ -2,14 +2,11 @@ package br.bnrmi.bnrmi;
 
 import br.bnrmi.Interface.MS;
 import br.bnrmi.Interface.MSimp;
-import java.net.MalformedURLException;
 import java.rmi.Naming;
-import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -24,21 +21,14 @@ public class Jogador {
         boolean vez = false;
         int tentativas = 0, acertos = 0;
         MSimp ms = new MSimp();
-        //if(cod == 1) {
-        //vez = true;
-        //}
-        //if(cod == 2){
-        //vez = false;
-        //}
+       
         try {
             MS c = (MS) Naming.lookup("rmi://127.0.0.1:6666/BatalhaNaval");
             System.out.println();
             iniciaNavios(navios);
             inicializarTabuleiro(tabuleiro);
             System.out.println();
-            //if(ms.Vez(cod){
-            //if(cod == 1) ms.j2 = true;
-            //if(cod == 2) ms.j1 = false;
+           
             do {
                 imprimirTabuleiro(tabuleiro);
                 atirar(tiro);
@@ -62,7 +52,6 @@ public class Jogador {
     }
 
     public static void inicializarTabuleiro(int[][] tabuleiro) {
-        //i e j são linhas e colunas respectivamente do tabuleiro.
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 tabuleiro[i][j] = -1;
@@ -78,11 +67,11 @@ public class Jogador {
             System.out.println((i + 1) + "");
             for (int j = 0; j < 5; j++) {
                 if (tabuleiro[i][j] == -1) {
-                    System.out.println("\t" + "~");
+                    System.out.print("\t" + "~");
                 } else if (tabuleiro[i][j] == 0) {
-                    System.out.println("\t" + "-");
+                    System.out.print("\t" + "-");
                 } else if (tabuleiro[i][j] == 1) {
-                    System.out.println("\t" + "X");
+                    System.out.print("\t" + "X");
                 }
             }
             System.out.println();
